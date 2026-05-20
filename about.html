@@ -4,281 +4,504 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>About Us | Atelier Palm</title>
-  <meta name="description" content="Learn about Atelier Palm—an event-focused extension of Sweet Palm Coffee & Food on King Street in Charleston, SC." />
-  <link rel="canonical" href="https://atelierpalm.com/about" />
+  <title>About Sweet Palm Private Events | Charleston Catering</title>
+  <meta name="description" content="Sweet Palm Private Events is a Charleston catering company that wants the opportunity to earn your business. We cater offices, weddings, private events, and public gatherings across the Lowcountry." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://sweetpalmevents.com/about.html" />
 
+  <!-- Bootstrap 5 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --ap-dark: rgba(195, 233, 199, 0.8);
-      --ap-card: rgba(255,255,255,0.06);
-      --ap-border: rgba(255,255,255,0.10);
+      --sage: #c3e9c7;
+      --sage-dark: #a8d4ac;
+      --cream: #faf8f4;
+      --forest: #2c4a2e;
+      --forest-light: #3d6140;
+      --warm-dark: #1a1a18;
+      --text-body: #2e2e2c;
+      --text-muted: #5c5c58;
+      --pink: #f7c5c0;
+      --pink-dark: #e8a8a2;
+      --card-bg: rgba(255,255,255,0.55);
+      --card-border: rgba(44,74,46,0.12);
+      --section-alt: #f0f5f0;
     }
-    body { background: var(--ap-dark); color: #0a0909; }
-    .text-muted-2 { color: rgba(5, 4, 4, 0.72) !important; }
 
-    /* HERO video background */
-    .hero {
+    * { box-sizing: border-box; }
+
+    body {
+      background: var(--cream);
+      color: var(--text-body);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', Georgia, serif;
+      color: var(--forest);
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      background: var(--forest);
+      color: rgba(255,255,255,.88);
+      font-size: .8rem;
+      padding: .45rem 0;
+      letter-spacing: .02em;
+    }
+    .top-bar a { color: var(--sage); text-decoration: none; }
+    .top-bar a:hover { color: #fff; }
+
+    /* ── NAVBAR ── */
+    .nav-wrap {
+      background: rgba(250,248,244,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--forest) !important;
+      font-weight: 600;
+    }
+    .navbar-brand span { font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: .9rem; color: var(--text-muted); }
+    .nav-link { color: var(--text-body) !important; font-size: .9rem; font-weight: 500; }
+    .nav-link:hover { color: var(--forest) !important; }
+    .btn-cta-nav {
+      background: var(--forest);
+      color: #fff !important;
+      border-radius: 50px;
+      padding: .4rem 1.1rem;
+      font-size: .85rem;
+      font-weight: 600;
+      border: none;
+      transition: background .2s;
+      text-decoration: none;
+    }
+    .btn-cta-nav:hover { background: var(--forest-light); color: #fff !important; }
+    .btn-call-nav {
+      background: transparent;
+      border: 1.5px solid var(--forest);
+      color: var(--forest) !important;
+      border-radius: 50px;
+      padding: .38rem 1rem;
+      font-size: .85rem;
+      font-weight: 600;
+      transition: all .2s;
+      text-decoration: none;
+    }
+    .btn-call-nav:hover { background: var(--forest); color: #fff !important; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      background: var(--forest);
+      padding: 5rem 0 4rem;
       position: relative;
-      min-height: 78vh;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 900px 500px at 80% 50%, rgba(195,233,199,.08), transparent);
+    }
+    .page-hero-label {
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--sage);
+      font-weight: 600;
+      margin-bottom: .7rem;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .page-hero h1 {
+      color: #fff;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 1rem;
+    }
+    .page-hero .sub {
+      color: rgba(255,255,255,.7);
+      font-size: 1.05rem;
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ── SECTIONS ── */
+    .section { padding: 5rem 0; }
+    .section-alt { background: var(--section-alt); }
+
+    /* ── CARD ── */
+    .card-plain {
+      background: #fff;
+      border: 1px solid var(--card-border);
+      border-radius: 1.2rem;
+      padding: 2rem 2.2rem;
+    }
+    .card-forest {
+      background: var(--forest);
+      border-radius: 1.2rem;
+      padding: 2rem 2.2rem;
+      color: rgba(255,255,255,.85);
+    }
+    .card-forest h3 { color: #fff; }
+    .card-forest a { color: var(--sage); text-decoration: none; }
+    .card-forest a:hover { color: #fff; }
+
+    /* ── VALUE ITEMS ── */
+    .value-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .value-item:last-child { border-bottom: none; }
+    .value-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: .75rem;
+      background: var(--section-alt);
       display: flex;
       align-items: center;
-      overflow: hidden;
-      background: #000;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
     }
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      width: 75%;
-      height: 110%;
-      object-fit: cover;
-      filter: brightness(.90) saturate(2.5) contrast(2.5);
-      transform: scale(1.02);
-      
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(1200px 600px at 15% 15%, rgba(243, 238, 238, 0.2), rgba(0,0,0,0.75)),
-        linear-gradient(180deg, rgba(228, 211, 211, 0.15), rgba(37, 33, 33, 0.75));
-        
-    }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 5rem 0;
-    }
-    .badge-soft {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(14, 11, 11, 0.12);
-      color: rgba(36, 29, 29, 0.92);
-    }
-    .card-glass {
-      background: var(--ap-card);
-      border: 1px solid var(--ap-border);
-      backdrop-filter: blur(8px);
-    }
-    .fw-semibold {
-        color: black;
-    }
-    .divider {
-      border-top: 1px solid rgba(255,255,255,0.10);
-    }
+    .value-title { font-weight: 600; color: var(--forest); margin-bottom: .2rem; font-size: .95rem; }
+    .value-desc { font-size: .88rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+
+    /* ── IMG TILE ── */
     .img-tile {
-      height: 240px;
       border-radius: 1rem;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
       overflow: hidden;
+      height: 260px;
+      border: 1px solid var(--card-border);
     }
-    .img-tile img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    .img-tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+    .img-tile:hover img { transform: scale(1.03); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--warm-dark);
+      color: rgba(255,255,255,.55);
+      padding: 3rem 0 1.5rem;
+      font-size: .85rem;
     }
-    .section { 
-      padding: 4rem 0; 
+    footer h5 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .8rem;
     }
-    .section-tight { padding: 3rem 0; }
-    .btn-outline-light {
-      border-color: rgba(12, 10, 10, 0.35);
+    footer a { color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: var(--sage); }
+    .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #fff; margin-bottom: .4rem; }
+    .footer-divider { border-color: rgba(255,255,255,.08); margin: 2rem 0 1rem; }
+    .city-tag { font-size: .78rem; color: rgba(255,255,255,.45); }
+    .city-tag::after { content: '•'; margin-left: .5rem; color: rgba(255,255,255,.18); }
+    .city-tag:last-child::after { content: ''; }
+
+    /* ── BTN UTIL ── */
+    .btn-forest {
+      background: var(--forest);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: .65rem 1.6rem;
+      font-weight: 600;
+      font-size: .92rem;
+      text-decoration: none;
+      transition: background .2s;
+      display: inline-block;
     }
-    .nav-blur {
-      backdrop-filter: blur(10px);
-      background: rgba(255, 182, 193, 0.8);
-      border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+    .btn-forest:hover { background: var(--forest-light); color: #fff; }
+    .btn-outline-forest {
+      background: transparent;
+      border: 1.5px solid var(--forest);
+      color: var(--forest);
+      border-radius: 50px;
+      padding: .62rem 1.4rem;
+      font-weight: 600;
+      font-size: .92rem;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-block;
     }
-    .form-control, .form-select, textarea {
-      background: rgba(255,255,255,0.06) !important;
-      border: 1px solid rgba(0, 0, 0, 0.12) !important;
-      color: black !important;
-    }
-    .form-label {
-        color: black;
-    }
-    .form-control::placeholder, textarea::placeholder { color: rgba(29, 24, 24, 0.6); }
-    a { color: black; }
-    a:hover { color: rgba(27, 23, 23, 0.8); }
-    .btn-pink {
-      background-color: #FFB6C1; /* light pink */
-      border-color: #FFB6C1;
-      color: #212529;
+    .btn-outline-forest:hover { background: var(--forest); color: #fff; }
+
+    @media (max-width: 768px) {
+      .page-hero { padding: 4rem 0 3rem; }
+      .section { padding: 3.5rem 0; }
     }
   </style>
-
-
-  <!-- LocalBusiness Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Sweet Palm Coffee & Food (Atelier Palm)",
-    "url": "https://atelierpalm.com/about",
-    "telephone": "+1-843-327-0347",
-    "email": "info@sweetpalmcoffee.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "471 King Street",
-      "addressLocality": "Charleston",
-      "addressRegion": "SC",
-      "postalCode": "29403",
-      "addressCountry": "US"
-    }
-  }
-  </script>
 </head>
 
-<!-- Top Nav -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-blur">
+<body>
+
+  <!-- TOP CONTACT BAR -->
+  <div class="top-bar">
     <div class="container">
-      <a class="navbar-brand fw-semibold text-white" href="#">
-        Sweet Palm Private Events <span class="text-white fw-normal">• Catering Service</span>
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#spaces">Spaces</a></li>
-          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Book</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
-        </ul>
-
-        <div class="d-flex gap-2 ms-lg-3">
-          <a class="btn btn-outline-light btn-sm" href="tel:+18433270347">Call 843-327-0347</a>
-          <a class="btn btn-pink btn-sm" href="#contact">Request Availability</a>
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-1">
+        <div>📍 471 King Street, Charleston, SC 29403 &nbsp;|&nbsp; Serving the Charleston Lowcountry</div>
+        <div class="d-flex gap-3">
+          <a href="tel:+18433270347">📞 843-327-0347</a>
+          <a href="mailto:info@sweetpalmcoffee.com">✉ info@sweetpalmcoffee.com</a>
         </div>
       </div>
     </div>
-  </nav><!-- Top Nav -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top nav-blur">
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg nav-wrap sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-semibold text-white" href="#">
-        Sweet Palm Private Events <span class="text-white fw-normal">• Catering Service</span>
+      <a class="navbar-brand" href="index.html">
+        Sweet Palm Events <span>&nbsp;• Catering &amp; Food Service</span>
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon" style="transform:scale(.75);"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navMain">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#spaces">Spaces</a></li>
-          <li class="nav-item"><a class="nav-link" href="#events">Events</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Book</a></li>
-          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-lg-3">
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#events">Event Types</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#how-it-works">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
         </ul>
-
-        <div class="d-flex gap-2 ms-lg-3">
-          <a class="btn btn-outline-light btn-sm" href="tel:+18433270347">Call 843-327-0347</a>
-          <a class="btn btn-pink btn-sm" href="#contact">Request Availability</a>
+        <div class="d-flex flex-wrap gap-2 mt-2 mt-lg-0">
+          <a class="btn-call-nav" href="tel:+18433270347">Call 843-327-0347</a>
+          <a class="btn-cta-nav" href="index.html#contact">Request a Quote</a>
         </div>
       </div>
     </div>
   </nav>
 
-<body>
-
-  <!-- Row 1: Hero Section -->
-  <header class="about-hero">
-    <div class="container">
-      <span class="badge badge-soft rounded-pill px-3 py-2 mb-3 d-inline-block">
-        471 King Street • Charleston, SC
-      </span>
-      <h1 class="display-5 fw-bold mt-4 mb-2">About Us</h1>
-      <p class="lead text-muted-2 mb-0">
-        Sweet Palm Private Events is a catering service branch of Sweet Palm Coffee &amp; We bring coffee culture and
-        to your local event space.
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <div class="container" style="position:relative;z-index:2;">
+      <div class="page-hero-label">About Us</div>
+      <h1>We Want the Chance to Earn Your Business</h1>
+      <p class="sub">
+        Sweet Palm Private Events is a catering company based in Charleston, SC. We're not the biggest name in the room — but we show up, we care about the details, and we genuinely want to be the caterer that makes your event run well.
       </p>
     </div>
   </header>
 
-  <!-- Row 2: Short Paragraph -->
-  <section class="py-5">
+  <!-- MAIN ABOUT SECTION -->
+  <section class="section">
     <div class="container">
-      <div class="card card-glass rounded-4">
-        <div class="card-body p-4 p-md-5">
-          <h2 class="h4 fw-semibold mb-3">A space for coffee + catering service to go</h2>
-          <p class="text-muted-2 mb-0">
-            By day, we’re a welcoming coffee shop experience in the heart of Charleston. Off hours, we shift into a
-            flexible venue and catering service for private gatherings, brand moments, workshops, and coffee-forward events. The goal is
-            simple: create an atmosphere that feels elevated but easy—where guests can connect, celebrate, and enjoy
-            a curated experience that still feels like your favorite local spot.
+      <div class="row gy-5 align-items-start">
+
+        <div class="col-lg-7">
+          <h2 style="font-size:1.9rem;margin-bottom:1.2rem;">What We're About</h2>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;margin-bottom:1.2rem;">
+            We are the catering branch of Sweet Palm Coffee &amp; Food, a local coffee shop at 471 King Street in Charleston. We started doing catering because the same guests who loved our coffee kept asking us to bring that experience to their events — and it made sense. Food and drink that people actually enjoy, served by people who actually care.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;margin-bottom:1.2rem;">
+            We cater all types of events — office lunches, corporate functions, weddings, private parties, fundraisers, and public gatherings. Every event gets its own conversation. There's no standard package we push on anyone, because a team lunch for 20 people and a 150-person wedding reception are completely different jobs that deserve completely different planning.
+          </p>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;">
+            If you're looking for a caterer and want to hear what we can do for your specific event, we'd genuinely like the opportunity to talk. Call us, tell us what you're working on, and we'll give you a straight answer on whether we're the right fit and what it would cost.
+          </p>
+
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <a href="tel:+18433270347" class="btn-forest">Call Us: 843-327-0347</a>
+            <a href="index.html#contact" class="btn-outline-forest">Send a Message</a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="img-tile" style="height:220px;">
+                <img src="assets/sweetpalmevents5.JPEG" alt="Sweet Palm catering setup" />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="img-tile" style="height:160px;">
+                <img src="assets/sweetpalmevents1.JPEG" alt="Catering food service" />
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="img-tile" style="height:160px;">
+                <img src="assets/sweetpalmevents2.JPEG" alt="Event catering detail" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="row gy-5 align-items-start">
+
+        <div class="col-lg-5">
+          <h2 style="font-size:1.75rem;margin-bottom:.5rem;">How We Work with Clients</h2>
+          <p style="color:var(--text-muted);font-size:.95rem;line-height:1.75;margin-bottom:0;">
+            Our process is straightforward. You call or message us, we learn about your event, and we put together a plan that fits. No online forms that go nowhere, no generic quotes — just a real conversation with people who want to help you pull it off.
           </p>
         </div>
+
+        <div class="col-lg-7">
+          <div class="card-plain">
+            <div class="value-item">
+              <div class="value-icon">📞</div>
+              <div>
+                <div class="value-title">You reach out — we listen first</div>
+                <p class="value-desc">We don't start with a price sheet. We start by asking what your event actually needs. Every catering job is different and we treat it that way.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">🍽</div>
+              <div>
+                <div class="value-title">We build around your event, not a template</div>
+                <p class="value-desc">Menu, service style, timing, headcount — all of it gets designed around what works for your specific event and your specific guests.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">💬</div>
+              <div>
+                <div class="value-title">Pricing is honest and discussed by phone</div>
+                <p class="value-desc">We price every job based on what it actually requires. Call us and we'll give you a straightforward number — no hidden fees, no surprises on the day.</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">✅</div>
+              <div>
+                <div class="value-title">We show up and handle the details</div>
+                <p class="value-desc">On the day of your event, we take care of the food and drink side so you can focus on your guests. That's the job and we take it seriously.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Row 3: Photo Row -->
-  <section class="pb-5">
+  <!-- THE PITCH / CLOSING -->
+  <section class="section">
     <div class="container">
-      <div class="d-flex justify-content-between align-items-end flex-wrap gap-2 mb-3">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 style="font-size:1.9rem;margin-bottom:1rem;">Give Us a Shot</h2>
+          <p style="color:var(--text-muted);line-height:1.85;font-size:1rem;max-width:580px;margin:0 auto 2rem;">
+            We're not going to oversell ourselves. What we can tell you is that we're a local Charleston business that cares about the work, takes catering seriously, and wants to build a reputation one well-fed event at a time. If you have an event coming up — office lunch, wedding, party, fundraiser, whatever it is — call us and let us make the case.
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center">
+            <a href="tel:+18433270347" class="btn-forest" style="font-size:1rem;padding:.75rem 2rem;">📞 Call 843-327-0347</a>
+            <a href="mailto:info@sweetpalmcoffee.com" class="btn-outline-forest" style="font-size:1rem;padding:.72rem 1.8rem;">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT INFO CARD -->
+  <section class="section section-alt" style="padding:3rem 0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-forest">
+            <h3 style="margin-bottom:1.2rem;">Contact &amp; Booking</h3>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.2rem;">Phone / Text</div>
+                <a href="tel:+18433270347" style="font-weight:600;font-size:.95rem;">843-327-0347</a>
+              </div>
+              <div class="col-sm-6">
+                <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.2rem;">Email</div>
+                <a href="mailto:info@sweetpalmcoffee.com" style="font-weight:600;font-size:.95rem;">info@sweetpalmcoffee.com</a>
+              </div>
+              <div class="col-sm-6">
+                <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.2rem;">Address</div>
+                <div style="font-size:.9rem;">471 King Street, Charleston, SC 29403</div>
+              </div>
+              <div class="col-sm-6">
+                <div style="font-size:.75rem;color:rgba(255,255,255,.5);margin-bottom:.2rem;">Coffee Shop</div>
+                <a href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener" style="font-size:.9rem;font-weight:600;">sweetpalmcoffee.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">Sweet Palm Private Events</div>
+          <p style="font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.45);margin-bottom:1rem;">
+            Food and drink catering for offices, businesses, weddings, private parties, and public events across Charleston, SC.
+          </p>
+          <div style="font-size:.84rem;">
+            <a href="tel:+18433270347" style="display:block;margin-bottom:.3rem;">📞 843-327-0347</a>
+            <a href="mailto:info@sweetpalmcoffee.com" style="display:block;margin-bottom:.3rem;">✉ info@sweetpalmcoffee.com</a>
+            <span style="color:rgba(255,255,255,.35);">📍 471 King Street, Charleston, SC 29403</span>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h5>Pages</h5>
+          <ul style="list-style:none;padding:0;margin:0;">
+            <li style="margin-bottom:.4rem;"><a href="index.html">Home</a></li>
+            <li style="margin-bottom:.4rem;"><a href="index.html#services">Services</a></li>
+            <li style="margin-bottom:.4rem;"><a href="index.html#events">Event Types</a></li>
+            <li style="margin-bottom:.4rem;"><a href="index.html#how-it-works">How It Works</a></li>
+            <li style="margin-bottom:.4rem;"><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-6 col-lg-4">
+          <h5>Areas Served</h5>
+          <div style="display:flex;flex-wrap:wrap;gap:.3rem .5rem;">
+            <span class="city-tag">Charleston</span>
+            <span class="city-tag">James Island</span>
+            <span class="city-tag">West Ashley</span>
+            <span class="city-tag">Mount Pleasant</span>
+            <span class="city-tag">Hanahan</span>
+            <span class="city-tag">Daniel Island</span>
+            <span class="city-tag">Goose Creek</span>
+            <span class="city-tag">Summerville</span>
+            <span class="city-tag">North Charleston</span>
+            <span class="city-tag">Isle of Palms</span>
+            <span class="city-tag">Folly Beach</span>
+            <span class="city-tag">Johns Island</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="footer-divider" />
+      <div class="d-flex flex-wrap justify-content-between align-items-center gap-2" style="font-size:.8rem;color:rgba(255,255,255,.35);">
+        <div>© <span id="year"></span> Sweet Palm Private Events — Charleston, SC</div>
         <div>
-          <h2 class="h4 fw-semibold mb-1">Inside Sweet Palm Private Events</h2>
+          <a href="tel:+18433270347" style="margin-right:.8rem;">Call</a>
+          <a href="mailto:info@sweetpalmcoffee.com" style="margin-right:.8rem;">Email</a>
+          <a href="#" style="color:rgba(255,255,255,.35);">Back to Top ↑</a>
         </div>
-        <a class="btn text-muted-2 btn-outline-light" href="tel:+18433270347">Call to Book</a>
-      </div>
-
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="img-tile">
-            <img src="/assets/sweetpalmevents6.JPEG" alt="Coffee bar and counter">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="img-tile">
-            <img src="assets/sweetpalmevents4.JPEG" alt="Seating and gathering space">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="img-tile">
-            <img src="assets/sweetpalmevents7.JPEG" alt="Event details and styling">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Row 4: Footer Row with NAP -->
-  <footer class="py-4">
-    <div class="container">
-      <div class="row gy-2 align-items-center">
-        <div class="col-md-8">
-          <div class="small text-muted-2">
-            <strong class="text-white">Sweet Palm Private Events Catering</strong> •
-            471 King Street, Charleston, SC 29403 •
-            <a class="text-decoration-none" href="tel:+18433270347">843-327-0347</a> •
-            <a class="text-decoration-none" href="mailto:info@sweetpalmcoffee.com">info@sweetpalmcoffee.com</a>
-          </div>
-        </div>
-        <div class="col-md-4 text-md-end">
-          <div class="small text-muted-2">
-            Coffee site:
-            <a class="text-decoration-none" href="https://www.sweetpalmcoffee.com/" target="_blank" rel="noopener">
-              sweetpalmcoffee.com
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="small text-muted-2 mt-3">
-        © <span id="year"></span> Sweet Palm Private Events
       </div>
     </div>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
